@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Belly Button Biodiversity</title>
+  <link rel="stylesheet" 
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+  />
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="jumbotron">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="line"></div>
+    <br>
+    <div class="row">
+      <p class="introductory"> Many bacterial species in the world still remain unknown, and Roza, our biological researcher, has jumped into the quest to find bacteria that has the ability to synthesize proteins that taste like beef. 
+        Her lab partnered with Improbable Beef, a startup, in hopes to find the bacteria within our human body, more specifially in belly button, that will provide the perfect beef taste.
+        To provide a little background, our body serves as a source of thousands of bacteria, and different species of bacteria harbor different parts of our body.
+        Also, across different people, different bacteria may harbor the same body part, say, a belly button. 
+        Roza and her team has collected bacterial samples from people across the country and identified the bacteria and their number in the first steps to find <b><i>the</i></b> bacteria. <br><br>
+      </p>
+    </div>
+    <div class="line"></div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div id="bar"></div>
+        <p class="chartdescrip">Above chart displays the top 10 bacterial speciees (OTUs) of an individual, with the highest value on top and lowest value on bottom. The chart may display less than 10 OTUs if an individual has less than 10 OTUs in the belly button.</p>
+      </div>
+      <div class="col-md-5">
+        <div id="gauge"></div>
+        <p class="chartdescrip">Above chart displays how frequent an individual washes the belly button in a given week. The black bar and the large number in the center displays the frequency of the wash. </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div id="bubble"></div>
+        <p class="chartdescrip">Above chart displays how many bacteria is present in each OTU. Each sample is displayed in varying sizes according to how large the sample is. Hovering over each bubble will display the OTU, sample value, and the list of bacteria present in the sample.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="static/js/charts.js"></script>
+
+</body>
+
+</html>
